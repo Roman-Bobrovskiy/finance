@@ -22,3 +22,9 @@ export const addTicker = (tickerName: string) => {
     await dispatch({ type: actionType.ADD_TICKER, payload: tickerName });
   };
 };
+
+export const removeTicker = (tickerName: string) => {
+  return async (dispatch: Dispatch<financeActionInterfaces>) => {
+    await dispatch({ type: actionType.REMOVE_TICKER, payload: tickerName });
+  };
+};

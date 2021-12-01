@@ -2,14 +2,14 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { getTickerName } from "../../utils/getTickerName";
 import { getTime } from "../../utils/getTime";
-import { PriceData } from "../PriceData";
+import { PriceData } from "../PriceData/PriceData";
 
 import styles from "./DataList.module.css";
 
 export const ListItemsForDataList = ({ refPrevPrice, elem }: any) => {
   return (
     <>
-      <li className={styles.tickersItem}>
+      <li data-ticker={elem.ticker} className={styles.tickersItem}>
         <span className={styles.companyName}>{getTickerName(elem.ticker)}</span>
         {refPrevPrice ? (
           refPrevPrice.map(
@@ -34,7 +34,7 @@ export const ListItemsForDataList = ({ refPrevPrice, elem }: any) => {
 
         <span className={styles.time}>
           {getTime(elem.last_trade_time)}
-          <i className="small material-icons">add_circle_outline</i>
+          <i className="tiny material-icons">delete</i>
         </span>
       </li>
     </>

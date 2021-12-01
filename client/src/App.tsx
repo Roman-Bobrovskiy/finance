@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { DataList } from "./components/DataList";
+import { DataList } from "./components/DataList/DataList";
 import { useDispatch } from "react-redux";
 import { getServerData } from "./redux/actionFinance";
 import { CompanyList } from "./components/CompanyList/CompanyList";

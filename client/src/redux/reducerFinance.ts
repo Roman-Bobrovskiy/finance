@@ -1,6 +1,7 @@
 import {
   financeActionAddTicker,
   financeActionInterfaces,
+  financeActionRemoveTicker,
   financeState,
   financeStateTickerList,
 } from "../interfaces/interfaces";
@@ -42,11 +43,18 @@ export const reducerFinance = (
 
 export const reducerTickerList = (
   state = initialStateTickerList,
-  action: financeActionAddTicker
+  action: financeActionAddTicker | financeActionRemoveTicker
 ): financeStateTickerList => {
   switch (action.type) {
     case actionType.ADD_TICKER:
       return { tickersList: [...state.tickersList, action.payload] };
+
+    case actionType.REMOVE_TICKER:
+      return {
+        tickersList: [
+          ...state.tickersList.filter((ticker) => ticker !== action.payload),
+        ],
+      };
 
     default:
       return state;

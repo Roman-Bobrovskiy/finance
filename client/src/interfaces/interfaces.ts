@@ -21,7 +21,12 @@ export interface financeStateTickerList {
 }
 export interface financeActionAddTicker {
   type: actionType.ADD_TICKER;
-  payload: any;
+  payload: string;
+}
+
+export interface financeActionRemoveTicker {
+  type: actionType.REMOVE_TICKER;
+  payload: string;
 }
 
 export interface priceDataInterface {
@@ -35,4 +40,5 @@ export interface priceDataInterface {
 export type financeActionInterfaces =
   | financeAction
   | financeActionError
-  | financeActionAddTicker;
+  | financeActionAddTicker
+  | financeActionRemoveTicker;
