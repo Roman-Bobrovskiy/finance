@@ -3,4 +3,5 @@ export enum actionType {
   ADD_TICKER = "add/ticker",
   REMOVE_TICKER = "remove/ticker",
   GET_DATA_ERROR = "get/data/error",
+  SET_INTERVAL = "set/interval",
 }

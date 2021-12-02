@@ -4,6 +4,7 @@ export interface financeState {
   data: any[];
   error: null | string;
   connection: boolean;
+  interval: string;
 }
 
 interface financeAction {
@@ -13,6 +14,11 @@ interface financeAction {
 
 interface financeActionError {
   type: actionType.GET_DATA_ERROR;
+  payload: string;
+}
+
+interface financeActionSetInterval {
+  type: actionType.SET_INTERVAL;
   payload: string;
 }
 
@@ -41,4 +47,5 @@ export type financeActionInterfaces =
   | financeAction
   | financeActionError
   | financeActionAddTicker
-  | financeActionRemoveTicker;
+  | financeActionRemoveTicker
+  | financeActionSetInterval;

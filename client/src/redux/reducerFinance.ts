@@ -11,6 +11,7 @@ const initialState: financeState = {
   data: [],
   error: null,
   connection: false,
+  interval: "5000",
 };
 
 const initialStateTickerList: financeStateTickerList = {
@@ -27,6 +28,7 @@ export const reducerFinance = (
         error: null,
         data: action.payload,
         connection: true,
+        interval: state.interval,
       };
 
     case actionType.GET_DATA_ERROR:
@@ -34,6 +36,15 @@ export const reducerFinance = (
         error: action.payload,
         data: [],
         connection: false,
+        interval: state.interval,
+      };
+
+    case actionType.SET_INTERVAL:
+      return {
+        error: null,
+        data: state.data,
+        connection: true,
+        interval: action.payload,
       };
 
     default:

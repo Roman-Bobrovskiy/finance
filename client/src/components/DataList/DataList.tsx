@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useTypeSelector } from "../../hooks/useTypeSecector";
 import { v4 as uuidv4 } from "uuid";
-import { ListItemsForDataList } from "../ListItemsForDataList/ListItemsForDataList";
+import { ListItemsForDataList } from "./ListItemsForDataList/ListItemsForDataList";
 import { useDispatch } from "react-redux";
 import { removeTicker } from "../../redux/actionFinance";
 

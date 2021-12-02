@@ -1,6 +1,6 @@
 import React from "react";
 
-import { priceDataInterface } from "../../interfaces/interfaces";
+import { priceDataInterface } from "../../../../interfaces/interfaces";
 
 export const PriceData = ({
   currentPrice,

@@ -1,8 +1,8 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { getTickerName } from "../../utils/getTickerName";
-import { getTime } from "../../utils/getTime";
-import { PriceData } from "../PriceData/PriceData";
+import { getTickerName } from "../../../utils/getTickerName";
+import { getTime } from "../../../utils/getTime";
+import { PriceData } from "./PriceData/PriceData";
 
 import styles from "./DataList.module.css";
 
