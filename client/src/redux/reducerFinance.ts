@@ -12,6 +12,7 @@ const initialState: financeState = {
   error: null,
   connection: false,
   interval: "5000",
+  pause: [],
 };
 
 const initialStateTickerList: financeStateTickerList = {
@@ -29,6 +30,7 @@ export const reducerFinance = (
         data: action.payload,
         connection: true,
         interval: state.interval,
+        pause: state.pause,
       };
 
     case actionType.GET_DATA_ERROR:
@@ -37,6 +39,7 @@ export const reducerFinance = (
         data: [],
         connection: false,
         interval: state.interval,
+        pause: state.pause,
       };
 
     case actionType.SET_INTERVAL:
@@ -45,6 +48,25 @@ export const reducerFinance = (
         data: state.data,
         connection: true,
         interval: action.payload,
+        pause: state.pause,
+      };
+
+    case actionType.ADD_PAUSED_TICKER:
+      return {
+        error: null,
+        data: state.data,
+        connection: true,
+        interval: state.interval,
+        pause: [...state.pause, action.payload],
+      };
+
+    case actionType.REMOVE_PAUSED_TICKER:
+      return {
+        error: null,
+        data: state.data,
+        connection: true,
+        interval: state.interval,
+        pause: [...state.pause.filter((ticker) => ticker !== action.payload)],
       };
 
     default:

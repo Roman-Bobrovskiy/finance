@@ -5,3 +5,36 @@
 .pt0 {
   padding-top: 0;
 }
+.pr {
+  padding-right: 1rem;
+}
+
+.pa {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+}
+
+.companyList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.input-field {
+  width: max-content;
+  color: #4db6ac;
+}
+
+.customConnectionStyle {
+  font-size: 1.2rem;
+}
+
+.df {
+  display: flex;
+  justify-content: space-between;
+}
